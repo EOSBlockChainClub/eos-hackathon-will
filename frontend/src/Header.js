@@ -10,7 +10,7 @@ class Header extends Component {
 
     GetSignInSection = () => {
         if (this.props.scatter != null){
-            return <div>{this.props.scatter.identity}</div>
+            return <div>{this.props.scatter.identity}</div> 
         }
         else {
             return <button type="button" className="btn btn-success">Sign In</button>
