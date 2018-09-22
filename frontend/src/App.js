@@ -12,9 +12,9 @@ import Eos from 'eosjs';
 // They let you get accounts and help you build signature providers.
 const network = {
   blockchain:'eos',
-  protocol:'https',
-  host:'nodes.get-scatter.com',
-  port:443,
+  protocol:'http',
+  host:'localhost',
+  port: 8888,
   chainId:'cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f'
 }
 class App extends Component {
