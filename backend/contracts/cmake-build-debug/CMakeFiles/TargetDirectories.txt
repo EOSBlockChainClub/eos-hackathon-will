@@ -1,0 +1,3 @@
+/Users/eluzgin/Documents/Blockchain/EOS/UKHackathon/eos-hackathon-will/backend/contracts/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/eluzgin/Documents/Blockchain/EOS/UKHackathon/eos-hackathon-will/backend/contracts/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/eluzgin/Documents/Blockchain/EOS/UKHackathon/eos-hackathon-will/backend/contracts/cmake-build-debug/CMakeFiles/contracts.dir

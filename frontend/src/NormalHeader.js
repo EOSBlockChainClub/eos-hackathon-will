@@ -3,6 +3,7 @@ import logo from './logo.png';
 import './App.css';
 import ScatterJS from 'scatter-js/dist/scatter.esm';
 import Eos from 'eosjs';
+import { encrypt, decrypt } from 'eos-communication-lib';
 
 const network = {
   blockchain:'eos',
@@ -36,33 +37,18 @@ class NormalHeader extends Component {
     
             const eos = scatter.eos(network, Eos, eosOptions);
 
-            const transactionOptions = { authorization:[`${account.name}@${account.authority}`] };
-            // let actions = [{
-            //     account: ["willchain"],
-            //     name: ["update"],
-            //     data: {
-            //         "_user": account.name,
-            //         "_trustee": "useraaaaaaaa",
-            //         "_will": "test"
-            //     }
-            // }];
-            eos.contract("willchain", {requiredFields}).then(contract => contract.update({"_user": account.name,
-            "_trustee": "useraaaaaaaa",
-            "_will": "test"}, transactionOptions)).catch(error => {
+            const trustee = "useraaaaaaaa"; // Replace me
+            const publicKey = "EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV"; // Trustee public key
+            const privateKey = "5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3";  // Sender private key
+            const plainWill = "Replace me with real form value";
+            const encryptedWill = encrypt(privateKey, publicKey, plainWill);
+
+            const authOptions = { authorization:[`${account.name}@${account.authority}`] };
+            const data = {"_user": account.name, "_trustee": trustee, "_will": encryptedWill};
+            eos.contract("willchain", {requiredFields}).then(contract => contract.update(data, authOptions)).catch(error => {
                 console.log(error);
             })
-            // const result = eos.contract('willchain').update({"_user": account.name,
-            // "_trustee": "useraaaaaaaa",
-            // "_will": "test"}, transactionOptions);
-            // eos.transaction({actions:[transactionOptions]}).catch(error => {
-            //     console.error(error);
-            // });;
-    
-            // eos.transfer(account.name, 'useraaaaaaaa', '1.0000 EOS', 'memo', transactionOptions).then(trx => {
-            //     console.log(`Transaction ID: ${trx.transaction_id}`);
-            // }).catch(error => {
-            //     console.error(error);
-            // });
+
     
         }).catch(error => {
             this.props.UpdateScatter(null);
