@@ -8,9 +8,9 @@
 }
 
 .App-header {
-  background-color: #222;
-  height: 15vh;
-  color: white;
+  background-color: #ebebeba2;
+  height: 27vh;
+  color: #222;
 }
 
 .App-title {
@@ -24,13 +24,22 @@
 .header-options-section {
   height: 100%;
   vertical-align: middle;
-  width: 80vw;
+  width: 70vw;
   display: inline-block;
+  padding-top: 6vh;
+}
+
+.extra-space {
+  width: 100%;
+  height: 3vh;
+}
+
+.header-options-section a {
+  color: #222;
 }
 
 .header-items {
   display: inline-block;
-  height: 100%;
   width: auto;
   margin: 2.5vw;
   font-size: 2vw;
@@ -38,7 +47,10 @@
 
 .logo {
   display: inline-block;
-  width: 10vw;
+}
+
+.logo img {
+  width: 15vw;
 }
 
 .header-buttons {
@@ -46,6 +58,47 @@
   width: 10vw;
 }
 
+.container {
+  width: 60vw;
+  background-color: white;
+  height: 100vh;
+  font-size: 1.7vw;
+}
+
+.For_bg {
+  background-image: url("./media/bg.png");
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+
+.button-list-class {
+  width: 100%;
+}
+
+.button-list {
+  display: block;
+}
+
+.container ul {
+  text-align: left;
+  display: inline-block;
+}
+
+li {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+.home-image {
+  width: 100%;
+  height: 100vh;
+}
+
+.add-will-buttons {
+  display: inline-block;
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

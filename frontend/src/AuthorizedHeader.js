@@ -1,20 +1,15 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './logo.png';
 import './App.css';
 
-class Header extends Component {
+class AuthorizedHeader extends Component {
 
     handleClick = (text) => {
         this.props.ChangePageTo(text)
     }
 
-    GetSignInSection = () => {
-        if (this.props.scatter != null){
-            return <div>{this.props.scatter.identity}</div> 
-        }
-        else {
-            return <button type="button" className="btn btn-success">Sign In</button>
-        }
+    SignOut = () => {
+      this.props.UpdateScatter(null);
     }
   
     render() {
@@ -25,21 +20,21 @@ class Header extends Component {
             </div>
             <div className="header-options-section">
               <div className="header-items" onClick={(ev) => this.handleClick("Profile")}>
-                My Profile
+                <a href="#">Wills</a>
               </div>
               <div className="header-items" onClick={(ev) => this.handleClick("Beneficiaries")}>
-                My Beneficiaries
+                <a href="#">Beneficiaries</a>
               </div>
-              <div className="header-items" onClick={(ev) => this.handleClick("Trustees")}>
-                My Trustees
+              <div className="header-items" onClick={(ev) => this.handleClick("Executor")}>
+                <a href="#">Executors</a>
               </div>
             </div>
             <div className="header-buttons">
-                {this.GetSignInSection()}
+              <button type="button" className="btn btn-danger" onClick={(ev) => this.SignOut()}>Sign Out</button>
             </div>
           </header>
       )
     }
   }
 
-  export default Header;
+  export default AuthorizedHeader;
