@@ -18,7 +18,19 @@ class AuthorizedPageBody extends Component {
           return <Executor ChangePageTo={this.props.ChangePageTo}/>
         }
         else if (this.props.currentpage === "CreateWill"){
-          return <CreateWill ChangePageTo={this.props.ChangePageTo}/>
+          return <CreateWill
+                    ChangePageTo={this.props.ChangePageTo}
+                    handleExecutorChange={this.props.handleExecutorChange}
+                    handleFNameChange={this.props.handleFNameChange}
+                    handleLNameChange={this.props.handleLNameChange}
+                    handlePercentageChange={this.props.handlePercentageChange}
+                    handleEmailChange={this.props.handleEmailChange}
+                    handlePhoneChange={this.props.handlePhoneChange}
+                    handledeathCertificateChange={this.props.handledeathCertificateChange}
+                    handlebiometricChange={this.props.handlebiometricChange}
+                    handlepowerOfAttorneyChange={this.props.handlepowerOfAttorneyChange}
+                    CreateEntry={this.props.CreateEntry}
+                   />
         }
         else {
           return <div/>

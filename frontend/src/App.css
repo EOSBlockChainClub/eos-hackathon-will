@@ -63,6 +63,7 @@
   background-color: white;
   height: 100vh;
   font-size: 1.7vw;
+  padding-top: 20px;
 }
 
 .For_bg {
@@ -77,6 +78,11 @@
 
 .button-list {
   display: block;
+}
+
+.extra-padding {
+  margin-left: 10px;
+  width: 30%;
 }
 
 .container ul {
